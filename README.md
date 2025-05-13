@@ -189,9 +189,10 @@ If you use this library in your research, please cite:
 > 15th International Conference on Computer Vision Theory and Applications (VISAPP), 2020.  
 > [![RaDE](https://img.shields.io/badge/View%20Paper-RaDE-blue)](https://doi.org/10.5220/0008985901420152)
 
+> **De Fernando, F. A., Pedronette, D. C. G., De Sousa, G. J., Valem, L. P., Guilherme, I. R.** 
 > *RaDE+: A Semantic Rank-based Graph Embedding Algorithm*  
 > International Journal of Information Management Data Insights, 2022.  
-> [![RaDE+](https://img.shields.io/badge/View%20Paper-RaDE%2B-blue)](https://doi.org/10.1016/j.patrec.2022.03.015)
+> [![RaDE+](https://img.shields.io/badge/View%20Paper-RaDE%2B-blue)](https://doi.org/10.1016/j.jjimei.2022.100078)
 
 ---
 
