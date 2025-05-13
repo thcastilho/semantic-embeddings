@@ -157,18 +157,26 @@ class GRaCE:
             for idx, ld in enumerate(self.leaders):
                 emb[i, idx] = self.get_correlation(i, ld)
         self.embeddings = emb
-
+    
     def fit(self, num_leaders: int = 128):
         """
-        Run the full GRaCE pipeline: estimation, leader selection, and embedding generation.
-
-        Args:
-            num_leaders (int): Number of leaders to select.
-
-        Returns:
-            np.ndarray: Embedding matrix of shape (dataset_size, num_leaders).
+        Compute estimations and select leaders.
         """
         self.compute_estimations()
-        self.compute_leaders(num_leaders)
+        self.compute_leaders(num_leaders=num_leaders)
+
+    def transform(self):
+        """
+        Generate and return the embedding matrix.
+        """
+        if self.estimations is None or self.leaders is None:
+            raise ValueError("Call fit() before transform().")
         self.generate_embeddings()
         return self.embeddings
+
+    def fit_transform(self, num_leaders=128):
+        """
+        Fit model and return embeddings.
+        """
+        self.fit(num_leaders=num_leaders)
+        return self.transform()

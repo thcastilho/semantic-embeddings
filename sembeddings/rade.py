@@ -145,18 +145,23 @@ class RaDE:
 
     def fit(self, num_candidates=1000, num_leaders=128, t=2):
         """
-        Fit the RaDE model to compute embeddings from the ranked lists.
-
-        Args:
-            num_candidates (int): Number of candidates to consider when selecting leaders.
-            num_leaders (int): Number of leaders to select.
-            t (int): Number of transition steps (matrix powers) to apply.
-
-        Returns:
-            np.ndarray: Embedding matrix of shape (dataset_size, num_leaders).
+        Compute internal matrices and select leaders.
         """
         self.compute_W_matrix()
         self.compute_leaders(num_candidates, num_leaders, t)
-        self.generate_embeddings()
 
+    def transform(self):
+        """
+        Generate and return the embedding matrix.
+        """
+        if self.transition_matrix_A is None or self.leaders is None:
+            raise ValueError("Call fit() before transform().")
+        self.generate_embeddings()
         return self.embeddings
+
+    def fit_transform(self, num_candidates=1000, num_leaders=20, t=2):
+        """
+        Fit model and return embeddings.
+        """
+        self.fit(num_candidates, num_leaders, t)
+        return self.transform()
