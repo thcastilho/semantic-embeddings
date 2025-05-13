@@ -2,6 +2,10 @@
 
 Package for creating rank-based semantic and contextual embeddings via RaDE and GRaCE algorithms.
 
+[![PyPI version](https://img.shields.io/pypi/v/semantic-embeddings.svg)](https://pypi.org/project/semantic-embeddings/)
+[![License](https://img.shields.io/pypi/l/semantic-embeddings.svg)](https://github.com/SeuUsuario/semantic-embeddings/blob/main/LICENSE)
+
+
 ## Features
 
 - **Rank-based Graph Embedding**  
