@@ -1,6 +1,6 @@
 [project]
 name = "semantic-embeddings"
-version = "0.1.0"
+version = "0.1.1"
 description = "Package for creating rank-based semantic and contextual embeddings."
 authors = [{ name="Thiago César Castilho Almeida", email="tc.almeida@unesp.br" },
 { name="Lucas Pascotti Valem", email="lucaspascottivalem@gmail.com" },
